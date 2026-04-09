@@ -1,0 +1,39 @@
+# Build results
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+packages/
+.nuget/
+
+# Environment variables
+.env
+
+# ASP.NET Core
+appsettings.Development.json
+
+# Publish output
+publish/
+
+# Database files
+*.mdf
+*.ldf
+
+# OS files
+.DS_Store
+Thumbs.db
