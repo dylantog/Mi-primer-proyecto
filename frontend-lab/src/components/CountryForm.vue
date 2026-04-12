@@ -51,18 +51,33 @@
 </template>
 
 <script>
-export default { 
-    data() { 
-        return { 
-        formData: { Name: "", Continent: "", Language: "" }, 
-        }; 
-    }, 
-    methods: { 
-        saveCountry() { 
-        console.log("Datos a guardar:", this.formData); 
+    import axios from "axios"; 
+    export default { 
+        data() { 
+            return { 
+            formData: { Name: "", Continent: "", Language: "" }, 
+            }; 
         }, 
-    }, 
-}; 
+        methods: { 
+            saveCountry() { 
+                console.log("Datos a guardar:", this.formData); 
+                axios 
+                    .post("https://localhost:7034/api/Country", { 
+                    Name: this.formData.Name, 
+                    Continent: this.formData.Continent, 
+                    Language: this.formData.Language, 
+                }) 
+                .then(function (response) { 
+                    console.log(response); 
+                    window.location.href = "/"; 
+                }) 
+                .catch(function (error) { 
+                    console.log(error); 
+                }); 
+ 
+            }, 
+        }, 
+    }; 
 </script>
 
 <style>
